@@ -9,6 +9,7 @@ public class GenerateFish : MonoBehaviour
     void Start()
     {
         InvokeRepeating("FishCreator", 1, 10);
+        //FishCreator();
     }
     public void FishCreator()
     {
@@ -17,7 +18,9 @@ public class GenerateFish : MonoBehaviour
         int rndZ = Random.Range(108, 194);
         float rndY = Random.Range(15,16.5f);
 
-        fishScore.transform.position = new Vector3(rndX, rndY, rndZ);
+        //fishScore.transform.position = new Vector3(rndX, rndY, rndZ);
+        fishScore.transform.position = new Vector3(364.2f, 15.9f, 159.72f);
+
     }
 
     // Update is called once per frame

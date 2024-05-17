@@ -11,13 +11,14 @@ public class Fish : MonoBehaviour
     [SerializeField] private float movementSpeed;
 
     [SerializeField] private float changePositionTime = 5f;
-    [SerializeField] private float moveDistance = 5f;
+    [SerializeField] private float moveDistance = 10;
 
 
 
     private void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        print(_navMeshAgent);
         _navMeshAgent.speed = movementSpeed;
         _animator = GetComponent<Animator>();
         InvokeRepeating(nameof(MoveAnimal), changePositionTime, changePositionTime);
@@ -44,7 +45,7 @@ public class Fish : MonoBehaviour
     private void MoveAnimal()
     {
         _navMeshAgent.SetDestination(RandomNavSphere(moveDistance));
-        //_navMeshAgent.SetDestination(new Vector3(357,15,214));
+        //_navMeshAgent.SetDestination(new Vector3(-9.75f, 3.005f, -5.46f));
 
     }
 }
