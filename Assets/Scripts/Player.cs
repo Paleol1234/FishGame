@@ -4,36 +4,49 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private GameObject[] inventory; 
+    private GameObject[] inventory;
+    [SerializeField] GameObject udochkaPrefab;
+    public enum IdItem
+    {
+        UDOCHKA = 1,
+        SACHOK = 2,
+        PRIKORMKA = 3
+    }
     // Start is called before the first frame update
     void Start()
     {
         inventory = new GameObject[10];
     }
 
-    // Update is called once per frame
+    // Update is called once per frame          
     void Update()
     {
-        
-    }
-    public void AddInventory(GameObject item)
-    {
-        bool hasFreeCell = false;
-        foreach(GameObject inventoryItem in inventory)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(inventoryItem == null)
-            {
-                hasFreeCell = true;
-                break;
-            }
-            else
-            {
-                hasFreeCell = false;
-            }
+            AddInventory(IdItem.UDOCHKA);
         }
-        if (hasFreeCell)
-        {
-            inventory[inventory.Length - 1] = item;
+    }
+    private GameObject AddUdochkaToInventory()
+    {
+
+        GameObject udochka = Instantiate(udochkaPrefab,transform.position, Quaternion.identity);
+        udochka.transform.parent = transform;
+        return udochka;
+    }
+    public void AddInventory(IdItem idItem)
+    {
+        
+        foreach(GameObject inventoryItem in inventory)
+        {   
+            if(inventoryItem && inventoryItem.CompareTag("Udochka")) { print("break"); break; }
+            if (inventoryItem == null)
+            {
+                if (idItem == IdItem.UDOCHKA)
+                {
+                    inventory[0] = AddUdochkaToInventory();
+                }
+                break;
+            }  
         }
     }
 }

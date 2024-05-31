@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5026867912148220116}
   m_Layer: 0
   m_Name: Udochka
-  m_TagString: Untagged
+  m_TagString: Udochka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,8 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff66400de105d3644864c0b197b1641b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletvelocity: 20
 --- !u!1 &5026867913530080578
 GameObject:
   m_ObjectHideFlags: 0

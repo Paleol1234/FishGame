@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class bulletCreator : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public float bulletvelocity = 20f;
+   // public GameObject bulletPrefab;
+    //public float bulletvelocity = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,12 +13,12 @@ public class bulletCreator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             GameObject newBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             newBullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletvelocity;
         }
-    }
+    }*/
 }
