@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
+  fishName: Som
   changePositionTime: 5
   moveDistance: 10
 --- !u!195 &4086689405554809142

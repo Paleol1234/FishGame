@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 7
+  fishName: TolsoLobik
   changePositionTime: 5
   moveDistance: 10
 --- !u!195 &714138999329215501

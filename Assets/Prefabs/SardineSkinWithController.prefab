@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: -9024226902408458560}
   m_Layer: 0
   m_Name: SardineSkinWithController
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 0
+  fishName: Seledka
   changePositionTime: 5
   moveDistance: 10
 --- !u!1 &166694

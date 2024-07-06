@@ -11,21 +11,34 @@ public class GameManager : MonoBehaviour
     public Text text;
     public Text fishCount;
     [SerializeField] GameObject player;
+    private bool hasPrikormka = false;
+    public bool HasPrikormka
+    {
+        get { return hasPrikormka; }
+        set { hasPrikormka = value; }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
+    public void AddPrikormka()
+    {
+        HasPrikormka = true;
+    }
+
     public void AddScore()
     {
         score += 1;
         text.text = $"Score: {score.ToString()}";
         print(score);
-        if(score == 5)
+        if (score == 5)
         {
             SceneManager.LoadScene(1);
         }
     }
+    
+
     
     public void AddFishScore()
     {

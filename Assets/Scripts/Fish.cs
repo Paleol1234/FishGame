@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +9,7 @@ public class Fish : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     [SerializeField] private float movementSpeed;
+    public string fishName;
 
     [SerializeField] private float changePositionTime = 5f;
     [SerializeField] private float moveDistance = 10;
@@ -28,7 +29,11 @@ public class Fish : MonoBehaviour
     {
         //_animator.SetFloat("Speed", _navMeshAgent.velocity.magnitude / movementSpeed);
     }
-
+    public void Stop()
+    {
+        print("откл движение рыб");
+        CancelInvoke();
+    }
     Vector3 RandomNavSphere(float distance)
     {
         Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;

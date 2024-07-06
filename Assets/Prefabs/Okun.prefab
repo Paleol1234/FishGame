@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
+  fishName: Okun
   changePositionTime: 5
   moveDistance: 5
 --- !u!114 &2507590868028814285
