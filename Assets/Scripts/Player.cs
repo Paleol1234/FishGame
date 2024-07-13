@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            bucket.Add(sachok.fishItem);
+           // bucket.Add(sachok.fishItem);
         }
         if (Input.GetKeyDown(KeyCode.H))
         {

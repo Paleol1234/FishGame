@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3749213457490053405, guid: 164abfb7de0eb2440a88935c1d0c9d70, type: 3}
       propertyPath: m_Name
-      value: Fish 1 Pref
+      value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3749213457490053405, guid: 164abfb7de0eb2440a88935c1d0c9d70, type: 3}
+      propertyPath: m_TagString
+      value: Fish
       objectReference: {fileID: 0}
     - target: {fileID: 6776993786961335632, guid: 164abfb7de0eb2440a88935c1d0c9d70, type: 3}
       propertyPath: m_RootOrder
