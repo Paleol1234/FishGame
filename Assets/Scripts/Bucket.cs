@@ -22,6 +22,13 @@ public class Bucket : MonoBehaviour
         }
         return fishListName;
     }
+    public void ShowList()
+    {
+        for(int i = 0; i < fishes.Length; i++)
+        {
+            print(fishes[i]);
+        }
+    }
     
     public void Add(GameObject fish)
     {
@@ -34,6 +41,7 @@ public class Bucket : MonoBehaviour
                 break;
             }
         }
+        ShowList();
     }
     public void Remove()
     {

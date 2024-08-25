@@ -6,13 +6,14 @@ using UnityEngine.AI;
 
 public class Fish : MonoBehaviour
 {
-    private NavMeshAgent _navMeshAgent;
+    public NavMeshAgent _navMeshAgent;
     private Animator _animator;
     [SerializeField] private float movementSpeed;
+    public string type;
     public string fishName;
 
     [SerializeField] private float changePositionTime = 5f;
-    [SerializeField] private float moveDistance = 10;
+    public float moveDistance = 10;
 
 
 
@@ -23,6 +24,7 @@ public class Fish : MonoBehaviour
         _navMeshAgent.speed = movementSpeed;
         _animator = GetComponent<Animator>();
         InvokeRepeating(nameof(MoveAnimal), changePositionTime, changePositionTime);
+        //StartCoroutine(stopMoveing());
     }
 
     private void Update()
@@ -31,8 +33,9 @@ public class Fish : MonoBehaviour
     }
     public void Stop()
     {
-        print("откл движение рыб");
         CancelInvoke();
+        print("cansleInvoke");
+        _animator.enabled = false;
     }
     Vector3 RandomNavSphere(float distance)
     {
@@ -45,6 +48,13 @@ public class Fish : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out navHit, distance, -1);
 
         return navHit.position;
+    }
+    IEnumerator stopMoveing()
+    {
+        yield return new WaitForSeconds(10);
+        CancelInvoke();
+        print("cansleInvoke");
+        _animator.enabled = false;
     }
 
     private void MoveAnimal()

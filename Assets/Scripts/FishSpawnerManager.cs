@@ -6,6 +6,7 @@ public class FishSpawnerManager : MonoBehaviour
 {
     [SerializeField]GameObject[]spwners;
     private Vector3[] SpwnerCoordinates;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class FishSpawnerManager : MonoBehaviour
         SpwnerCoordinates[2] = new Vector3(373, 15, 184);
         SpwnerCoordinates[3] = new Vector3(318, 15, 172);
         InvokeRepeating("SpawnSpawners", 0, 0.5f);
-;
+        
     }
     void SpawnSpawners()
     {

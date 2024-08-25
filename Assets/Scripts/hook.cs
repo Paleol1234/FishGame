@@ -9,6 +9,8 @@ public class hook : MonoBehaviour
     public delegate void FishCallback(GameObject currentFish);
     public static FishCallback fishToached;
     public static FishCallback fishOutside;
+    Sachok sachok;
+    Bucket bucket;
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(Interval);
@@ -16,7 +18,8 @@ public class hook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sachok = FindObjectOfType<Sachok>(); 
+        bucket = FindObjectOfType<Bucket>();
     }
 
     // Update is called once per frame
@@ -28,13 +31,25 @@ public class hook : MonoBehaviour
     {
         if (other.CompareTag("Fish"))
         {
-            currentFish=other.gameObject;
-            fishToached(currentFish);
-            //отключаем у рыбы движение
-            currentFish.GetComponent<Fish>().Stop();
+            if (true)
+            {
+                print("Рыба коснулась и сачек есть");
+                currentFish=other.gameObject;
+                bucket.Add(currentFish);
+
+                fishToached(currentFish);
+                //отключаем у рыбы движение
+                currentFish.GetComponent<Fish>().Stop();
+                
+            }
+            
         }
-        print("Colution");
         
+    }
+    IEnumerator fishDelete()
+    {
+        yield return new WaitForSeconds(Interval);
+        Destroy(currentFish);
     }
     private void OnTriggerExit(Collider other)
     {

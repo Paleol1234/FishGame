@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Sachok : MonoBehaviour
 {
+    public bool IsShow = false;
+    
     bool fishOnHook = false;
     public GameObject fishItem;
 
@@ -25,6 +27,7 @@ public class Sachok : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            IsShow = !IsShow;
             gameObject.SetActive(true);
             if (fishOnHook)
             {
